@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { BellIcon, MagnifyingGlassIcon } from "@heroicons/react/24/outline";
-import Modal from "../components/modal/Modal";
 import TaskCard from "../components/tasks/TaskCard";
 import MyTasks from "../components/tasks/MyTasks";
+import AddTaskModal from "../components/tasks/AddTaskModal";
 
 const Tasks = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,7 +15,7 @@ const Tasks = () => {
             <h1 className="font-semibold text-3xl">Tasks</h1>
           </div>
           <div className="flex gap-5">
-            <button className="border-2 border-secondary/20 hover:border-primary hover:bg-primary rounded-xl h-10 w-10  grid place-content-center text-secondary hover:text-white transition-all">
+            <button className="border-2 border-secondary/20 hover:border-primary hover:bg-primary rounded-xl h-10 w-10 grid place-content-center text-secondary hover:text-white transition-all">
               <MagnifyingGlassIcon className="h-6 w-6" />
             </button>
             <button className="border-2 border-secondary/20 hover:border-primary hover:bg-primary rounded-xl h-10 w-10 grid place-content-center text-secondary hover:text-white transition-all">
@@ -23,7 +23,7 @@ const Tasks = () => {
             </button>
 
             {/* Add task modal  */}
-            <Modal isOpen={isOpen} setIsOpen={setIsOpen} />
+            <AddTaskModal isOpen={isOpen} setIsOpen={setIsOpen} />
             <button
               type="button"
               onClick={() => setIsOpen(!isOpen)}
